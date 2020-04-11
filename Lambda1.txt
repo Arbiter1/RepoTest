@@ -1,0 +1,39 @@
+Definitie calcul lambda:
+
+  1. Variabile -> x
+  2. Functii (lambda) -> \x.x
+  3. Aplicatii -> (expresie1 expresie2)
+
+App (Lambda _ _) _ = True
+_ = False
+
+
+function (x) {
+  return x
+}
+
+\x.x \y.y -> \y.y
+
+
+
+
+1. (λy. y + 1) x
+    -> x + 1
+
+function (f) {
+  function (x) {
+    return f (f (x))
+  }
+}
+
+function (y) {
+  return y+1
+}
+
+2. (λf. λx. f (f x)) g
+    -> λx. g (g x)
+
+3. (λ f. λx. f (f x))  (λy. y+1)
+    -> λx.( (λy. y+1) ((λy. y+1) x) )
+    -> λx.( (λy. y+1) (x+1) )
+    -> λx.( x+2 )
